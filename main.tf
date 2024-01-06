@@ -8,4 +8,8 @@ resource "azurerm_container_registry" "example" {
   resource_group_name = data.azurerm_resource_group.rg.name
   location            = "east us"
   sku                 = "Premium"
+
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
